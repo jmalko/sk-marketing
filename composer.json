@@ -1,9 +1,9 @@
 {
-    "name": "my-vendor-name/malko-sk",
+    "name": "jmalko/sk-marketing",
     "extra": {
         "statamic": {
-            "name": "Malko Sk",
-            "description": "Malko Sk starter kit"
+            "name": "Marketing Site Starter Kit",
+            "description": "A starter kit for a marketing sites."
         }
     }
 }
