@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/malko-sk",
+    "extra": {
+        "statamic": {
+            "name": "Malko Sk",
+            "description": "Malko Sk starter kit"
+        }
+    }
+}

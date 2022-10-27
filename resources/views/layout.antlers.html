@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title ?? brand:company_name }}</title>
+        <link rel="shortcut icon" href="{{ brand:favicon }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+        {{ tracker:google_analytics }}
+        {{ tracker:facebook }}
+    </head>
+    <body class="bg-white font-sans text-black"
+          {{ if brand:texture }}style="background-image: url('{{ brand:texture }}');" {{ /if }}>
+
+        <div class="bg-white bg-repeat-x border-b-4 border-lightblue "
+          style="background-image: url('{{ brand:header_texture }}');">
+            <div class="max-w-7xl mx-auto px-4 pt-10 pb-6  grid md:grid-cols-12 items-center">
+                <div class="md:col-span-3 flex items-center justify-between">
+                    <a href="/">
+                        <img src="{{ brand:logo }}" alt="{{ brand:company_name }}" class="max-h-20">
+                    </a>
+                    <div class="md:hidden">
+                        <button id="main-menu-btn" class="btn">Menu</button>
+                    </div>
+                </div>
+                <div class="md:col-span-9">
+                    <div class="md:col-span-1 text-right my-4">
+                        <a href="{{ social:facebook_url }}"><img src="{{ social:facebook_logo }}" alt="Facebook" class="inline-block h-6 ml-4"></a> <a href="{{ social:ig_url }}"><img src="{{ social:ig_logo }}" alt="Instagram" class="inline-block h-6"></a>
+                    </div>
+                    <div id="main-menu" class="hidden md:block grid items-middle text-center md:text-right gap-4">
+                        {{ nav:collection:pages include_home="false" }}
+                            <a href="{{ url }}" class="font-serif text-black text-xl md:ml-4 border-b-4 border-transparent hover:border-black">
+                                {{ title }}
+                            </a>
+                        {{ /nav:collection:pages }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ template_content }}
+
+        <div class="bg-black border-t-4 text-white">
+
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2">
+
+                <div class="font-serif text-xl md:col-span-1">
+                    &copy; {{ brand:company_name }} {{ now format="Y" }}
+                </div>
+                
+                <div class="md:col-span-1 text-right">
+                    <a href="{{ social:facebook_url }}"><img src="{{ social:facebook_logo }}" alt="Facebook" class="inline-block h-6 ml-4"></a> <a href="{{ social:ig_url }}"><img src="{{ social:ig_logo }}" alt="Instagram" class="inline-block h-6"></a>
+                </div>
+
+            </div>
+        </div>
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>
